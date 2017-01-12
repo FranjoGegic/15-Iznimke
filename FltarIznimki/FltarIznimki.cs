@@ -15,11 +15,20 @@ namespace Vsite.CSharp
             {
                 throw iznimka;
             }
-            // TODO: Složiti filtere iznimki tipa Exception, ArgumentOutOfRangeException i ArgumentException, dodati ispise koristeći gornje formate te provjeriti koja će iznimka biti uhvaćena u kojem bloku.
+            //  Složiti filtere iznimki tipa Exception, ArgumentOutOfRangeException i ArgumentException, dodati ispise koristeći gornje formate te provjeriti koja će iznimka biti uhvaćena u kojem bloku.
+            catch (ArgumentOutOfRangeException e)
+            {
+                Console.WriteLine(FormatFiltraArgumentOutOfRangeException, e.GetType().Name);
+            }
+            catch(ArgumentException e)
+            {
+                Console.WriteLine(FormatFiltraArgumentException, e.GetType().Name);
+            }
             catch (Exception e)
             {
                 Console.WriteLine(FormatFiltraException, e.GetType().Name);
             }
+            
             Console.WriteLine();
         }
 
